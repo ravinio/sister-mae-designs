@@ -1,3 +1,5 @@
+import React from 'react';
+import Button from '@mui/material/Button';
 import logo from './logo.svg';
 import './App.css';
 
@@ -17,6 +19,7 @@ function App() {
         >
           Learn fucking React
         </a>
+        <Button variant="contained" color="secondary">hello</Button>
       </header>
     </div>
   );
