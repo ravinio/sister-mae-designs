@@ -53,7 +53,16 @@ function TopNav(props) {
    return (
       <Box sx={{ display: 'flex' }}>
          <CssBaseline />
-         <AppBar component="nav" elevation={0} sx={{ boxShadow: theme.palette.shadows.primary}}>
+         <AppBar 
+            component="nav" 
+            elevation={0} 
+            sx={{ 
+               width: '-webkit-fill-available',
+               boxShadow: theme.palette.shadows.primary, 
+               margin: { xs: 2, sm: 3, md: 4 },
+               borderRadius: '6px 32px 6px 6px' 
+            }}
+         >
             <Toolbar>
                <IconButton
                   aria-label="open drawer"

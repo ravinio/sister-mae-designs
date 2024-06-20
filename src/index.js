@@ -11,9 +11,8 @@ const globalStyles = (
     styles={{
       body: {
         background: `${theme.palette.background.default} !important`,
-        padding: '32px',
         boxSizing: 'border-box',
-        minHeight: '100vh',
+        minHeight: '100vh'
       },
     }}
   />
