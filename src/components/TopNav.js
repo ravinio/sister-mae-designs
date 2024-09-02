@@ -4,7 +4,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { 
    AppBar, 
    Box, 
-   Button, 
    CssBaseline, 
    Divider, 
    Drawer, 
@@ -17,6 +16,7 @@ import {
    Typography,
    useTheme 
 } from '@mui/material';
+import NavButton from './NavButton';
 
 const drawerWidth = 240;
 const navItems = ['Shop', 'About', 'Contact'];
@@ -73,7 +73,7 @@ function TopNav(props) {
                   <MenuIcon />
                </IconButton>
                <Typography
-                  variant="h6"
+                  variant="h4"
                   component="div"
                   sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                >
@@ -81,9 +81,7 @@ function TopNav(props) {
                </Typography>
                <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                   {navItems.map((item) => (
-                  <Button key={item}>
-                     {item}
-                  </Button>
+                     <NavButton key={item} label={item} />
                   ))}
                </Box>
             </Toolbar>
