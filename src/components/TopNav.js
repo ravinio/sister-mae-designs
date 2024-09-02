@@ -1,11 +1,9 @@
 
 import * as React from 'react';
-import MenuIcon from '@mui/icons-material/Menu';
 import { 
    AppBar, 
    Box, 
    CssBaseline, 
-   Divider, 
    Drawer, 
    IconButton, 
    List, 
@@ -17,9 +15,10 @@ import {
    useTheme 
 } from '@mui/material';
 import NavButton from './NavButton';
+import { FiMenu, FiShoppingCart, FiX } from 'react-icons/fi';
 
-const drawerWidth = 240;
 const navItems = ['Shop', 'About', 'Contact'];
+const mobileNavItems = ['Home', 'Shop', 'About', 'Contact'];
 
 function TopNav(props) {
    const { window } = props;
@@ -31,19 +30,34 @@ function TopNav(props) {
    };
 
    const drawer = (
-      <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-        <Typography variant="h6" sx={{ my: 2 }}>
-          Sister M.A.E. Designs
-        </Typography>
-        <Divider />
-        <List>
-          {navItems.map((item) => (
-            <ListItem key={item} disablePadding>
-              <ListItemButton sx={{ textAlign: 'center' }}>
-                <ListItemText primary={item} />
-              </ListItemButton>
-            </ListItem>
-          ))}
+      <Box height='100%' display='flex' flexDirection='column'>
+        <IconButton 
+           aria-label="close drawer"
+           onClick={handleDrawerToggle}
+           color="secondary"
+           sx={{ alignSelf: 'flex-end' }}
+        >
+           <FiX />
+        </IconButton>
+        <List 
+            onClick={handleDrawerToggle}
+            sx={{ 
+               display: 'flex', 
+               flexDirection: 'column', 
+               alignItems: 'center',
+               gap: '10px'
+            }}
+         >
+            {mobileNavItems.map((item) => (
+               <NavButton key={item} label={item} />
+            ))}
+            <IconButton 
+               onClick={handleDrawerToggle}
+               color="secondary"
+               sx={{ marginTop: '10px'}}
+            >
+               <FiShoppingCart fontSize='34px' />
+            </IconButton>
         </List>
       </Box>
    );
@@ -64,14 +78,26 @@ function TopNav(props) {
             }}
          >
             <Toolbar>
+               {/* Mobile */}
+               <Typography
+                  variant="h4"
+                  component="div"
+                  sx={{ flexGrow: 1, display: { sm: 'none' } }}
+               >
+                  Sister M.A.E. Designs
+               </Typography>
                <IconButton
                   aria-label="open drawer"
                   edge="start"
                   onClick={handleDrawerToggle}
-                  sx={{ mr: 2, display: { sm: 'none' } }}
+                  color="secondary"
+                  sx={{ display: { sm: 'none' } }}
                >
-                  <MenuIcon />
+                  <FiMenu />
                </IconButton>
+
+
+               {/* Desktop */}
                <Typography
                   variant="h4"
                   component="div"
@@ -79,10 +105,37 @@ function TopNav(props) {
                >
                   Sister M.A.E. Designs
                </Typography>
-               <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+               <Box sx={{ display: { xs: 'none', sm: 'flex', gap: '32px', alignItems: 'center' } }}>
                   {navItems.map((item) => (
                      <NavButton key={item} label={item} />
                   ))}
+                  <IconButton color="secondary"
+                     pt="20px"
+                     sx={{
+                     position: 'relative',
+                     overflow: 'visible',
+                     '&::after': {
+                        content: '""',
+                        position: 'absolute',
+                        top: '70%',
+                        left: '44%',
+                        width: '0',
+                        height: '0',
+                        borderRadius: '50%',
+                        border: `2px solid ${theme.palette.secondary.main}`,
+                        transition: 'width 0.3s ease, height 0.3s ease',
+                        transform: 'translate(-50%, -50%)',
+                     },
+                     '&:hover::after': {
+                        top: '50%',
+                        left: '50%',
+                        width: '120%',
+                        height: '120%',
+                     },
+                     }}
+                  >
+                     <FiShoppingCart fontSize='18px' />
+                  </IconButton>
                </Box>
             </Toolbar>
          </AppBar>
@@ -93,11 +146,17 @@ function TopNav(props) {
                open={mobileOpen}
                onClose={handleDrawerToggle}
                ModalProps={{
-                  keepMounted: true, // Better open performance on mobile.
+                  keepMounted: true,
                }}
                sx={{
                   display: { xs: 'block', sm: 'none' },
-                  '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+                  '& .MuiDrawer-paper': { 
+                     boxSizing: 'border-box', 
+                     width: '100vw', 
+                     height: '100vh',
+                     backgroundColor: 'rgba(255,255,255,.8)',
+                     backdropFilter: 'blur(2px)' 
+                  },
                }}
             >
                {drawer}

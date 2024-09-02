@@ -31,7 +31,7 @@ let theme = createTheme({
 theme = createTheme(theme, {
   typography: {
     h1: {
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.up('xs')]: {
         fontSize: '34px',
       },
       [theme.breakpoints.up('sm')]: {
@@ -51,7 +51,7 @@ theme = createTheme(theme, {
       lineHeight: 'normal',
     },
     h2: {
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.up('xs')]: {
         fontSize: '24px',
       },
       [theme.breakpoints.up('sm')]: {
@@ -71,7 +71,7 @@ theme = createTheme(theme, {
       lineHeight: 'normal',
     },
     h3: {
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.up('xs')]: {
         fontSize: '20px',
       },
       [theme.breakpoints.up('sm')]: {
@@ -91,7 +91,7 @@ theme = createTheme(theme, {
       lineHeight: 'normal',
     },
     h4: {
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.up('xs')]: {
         fontSize: '18px',
       },
       [theme.breakpoints.up('sm')]: {
@@ -111,7 +111,7 @@ theme = createTheme(theme, {
       lineHeight: 'normal',
     },
     h5: {
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.up('xs')]: {
         fontSize: '14px',
       },
       [theme.breakpoints.up('sm')]: {
@@ -131,7 +131,7 @@ theme = createTheme(theme, {
       lineHeight: 'normal',
     },
     h6: {
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.up('xs')]: {
         fontSize: '12px',
       },
       [theme.breakpoints.up('sm')]: {
@@ -151,7 +151,7 @@ theme = createTheme(theme, {
       lineHeight: 'normal',
     },
     subtitle1: {
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.up('xs')]: {
         fontSize: '14px',
       },
       [theme.breakpoints.up('sm')]: {
@@ -171,7 +171,7 @@ theme = createTheme(theme, {
       lineHeight: 'normal',
     },
     subtitle2: {
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.up('xs')]: {
         fontSize: '12px',
       },
       [theme.breakpoints.up('sm')]: {
@@ -191,7 +191,7 @@ theme = createTheme(theme, {
       lineHeight: 'normal',
     },
     body1: {
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.up('xs')]: {
         fontSize: '14px',
       },
       [theme.breakpoints.up('sm')]: {
@@ -211,7 +211,7 @@ theme = createTheme(theme, {
       lineHeight: 'normal',
     },
     body2: {
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.up('xs')]: {
         fontSize: '12px',
       },
       [theme.breakpoints.up('sm')]: {
@@ -231,7 +231,7 @@ theme = createTheme(theme, {
       lineHeight: 'normal',
     },
     caption: {
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.up('xs')]: {
         fontSize: '10px',
       },
       [theme.breakpoints.up('sm')]: {
