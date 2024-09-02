@@ -7,9 +7,6 @@ import {
    Drawer, 
    IconButton, 
    List, 
-   ListItem, 
-   ListItemButton, 
-   ListItemText, 
    Toolbar,
    Typography,
    useTheme 
@@ -35,7 +32,7 @@ function TopNav(props) {
            aria-label="close drawer"
            onClick={handleDrawerToggle}
            color="secondary"
-           sx={{ alignSelf: 'flex-end' }}
+           sx={{ alignSelf: 'flex-end', padding: '20px' }}
         >
            <FiX />
         </IconButton>
