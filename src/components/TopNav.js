@@ -151,7 +151,7 @@ function TopNav(props) {
                      boxSizing: 'border-box', 
                      width: '100vw', 
                      height: '100vh',
-                     backgroundColor: 'rgba(255,255,255,.8)',
+                     backgroundColor: 'rgba(255,255,255,.9)',
                      backdropFilter: 'blur(2px)' 
                   },
                }}
